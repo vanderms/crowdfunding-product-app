@@ -1,0 +1,77 @@
+@use 'sass:math';
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 32px auto 0;
+  width: 100%;
+  height: 24px;
+  position: relative;
+  z-index: 999;
+  padding-inline: math.percentage($number: math.div(24, 375));
+
+  .navlink-list {
+    position: fixed;
+    z-index: 2;
+    top: 88px;
+    right: 6.4%;
+    width: Min(327px, math.percentage($number: math.div(327, 375)));
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 8px;
+  }
+
+  .logo,
+  .btn-menu {
+    position: relative;
+    z-index: 2;
+  }
+
+  .backdrop {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.0001) 100%);
+  }
+
+  .navlink-list li {
+    padding: 24px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    border: 1px solid rgba(0, 0, 0, 0.0497193);
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(47, 47, 47, 0.1);
+    }
+  }
+
+  .btn-menu {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.navbar[data-open='true'] {
+
+  .navlink-list,
+  .backdrop {
+    display: flex;
+  }
+}
+
+.navbar[data-scroll='true'] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  height: 56px;
+  margin-top: 0;
+}

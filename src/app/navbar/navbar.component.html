@@ -1,5 +1,14 @@
-<nav class="navbar">
+<nav class="navbar" [attr.data-open]="isOpen" [attr.data-scroll]='hasScrolled'>
   <a href="/" aria-label="Homepage">
     <img src="/assets/logo.svg" alt="" class="logo">
   </a>
+  <ul class="navlink-list">
+    <li><a href="/">About</a></li>
+    <li><a href="/">Discover</a></li>
+    <li><a href="/">Get Started</a></li>
+  </ul>
+  <button class="btn-menu" aria-label="open menu" (click)="toggleSidebar()">
+    <img [src]="getCurrentBtn()" alt="">
+  </button>
+  <div class="backdrop"></div>
 </nav>
