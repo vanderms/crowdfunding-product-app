@@ -1,3 +1,5 @@
+@use '../../../styles/mixins' as *;
+
 .card-product {
   display: flex;
   flex-direction: column;
@@ -5,7 +7,23 @@
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 8px;
 
-  &[data-out-of-stock='true']{
+  @include media(tablet) {
+    padding: 37px 31px 31px;
+
+    &__top-container,
+    &__bottom-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__bottom-container {
+      margin-top: 24px;
+      height: 48px;
+    }
+  }
+
+  &[data-out-of-stock='true'] {
     opacity: 0.5;
   }
 
@@ -14,6 +32,12 @@
     font-size: 14px;
     line-height: 17px;
     color: var(--black);
+
+    @include media(tablet) {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+    }
   }
 
   &__price {
@@ -22,6 +46,12 @@
     font-size: 14px;
     line-height: 17px;
     color: var(--moderate-cyan);
+
+    @include media(tablet) {
+      margin-top: 0;
+      font-size: 15px;
+      line-height: 18px;
+    }
   }
 
   &__description {
@@ -30,8 +60,12 @@
     font-size: 14px;
     line-height: 24px;
     color: var(--dark-gray);
-  }
 
+    @include media(tablet) {
+      font-size: 16px;
+      line-height: 30px;
+    }
+  }
 
   &__left {
     margin-top: 25px;
@@ -42,6 +76,10 @@
     font-size: 15px;
     line-height: 18px;
     color: var(--dark-gray);
+
+    @include media(tablet) {
+      margin-top: 0;
+    }
 
     strong {
       font-weight: 700;
@@ -66,14 +104,17 @@
     line-height: 17px;
     cursor: pointer;
 
-    &:disabled{
+    @include media(tablet) {
+      margin-top: 0;
+    }
+
+    &:disabled {
       background-color: var(--dark-gray);
       cursor: initial;
     }
 
-    &:not(:disabled):hover{
+    &:not(:disabled):hover {
       background-color: var(--dark-cyan);
     }
   }
-
 }

@@ -1,7 +1,6 @@
 @use 'sass:math';
 @use '../../styles/mixins' as *;
 
-
 .about-product {
   margin: 24px auto 76px;
   width: min(730px, math.percentage(math.div(327, 375)));
