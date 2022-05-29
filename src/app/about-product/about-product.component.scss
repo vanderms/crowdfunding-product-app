@@ -3,13 +3,14 @@
 
 
 .about-product {
-  margin: 24px auto 0;
+  margin: 24px auto 76px;
   width: min(730px, math.percentage(math.div(327, 375)));
   border: 1px solid rgba(0, 0, 0, 0.0497193);
   padding: 39px 23px;
 
   @include media(tablet) {
     padding: 47px;
+    margin-bottom: 124px;
   }
 }
 
@@ -52,4 +53,11 @@
       margin-top: 30px;
     }
   }
+}
+
+.product-list {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }

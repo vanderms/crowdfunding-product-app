@@ -1,0 +1,7 @@
+<article class="card-product" [attr.data-out-of-stock]="left === 0">
+  <h3 class="card-product__title">{{ name }}</h3>
+  <p class="card-product__price">Pledge ${{ price }} or more </p>
+  <p class="card-product__description">{{ description }}</p>
+  <p class="card-product__left"><strong class="card-product__value">{{ left }}</strong> left</p>
+  <button class="card-product__select" [disabled]="left == 0">Select Reward</button>
+</article>

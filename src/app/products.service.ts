@@ -18,6 +18,6 @@ export class ProductsService {
   constructor() { }
 
   getData() : Observable<IProduct[]> {
-    return of(data).pipe(share());
+    return of(Array.from(data));
   }
 }
