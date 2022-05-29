@@ -6,7 +6,7 @@
   display: flex;
 
   @include media(laptop) {
-    margin-top: -68px;
+    margin-top: -68px;    
   }
 
   &::before {
@@ -26,5 +26,9 @@
     height: 300px;
     object-fit: cover;
     object-position: center;
+
+    @include media(laptop){
+      height: 400px;
+    }
   }
 }
