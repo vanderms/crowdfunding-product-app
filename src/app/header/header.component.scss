@@ -1,0 +1,99 @@
+@use 'sass:math';
+@use '../../styles/mixins' as *;
+
+.header {
+  width: min(730px, math.percentage(math.div(327, 375)));
+  margin: -56px auto 0;
+  position: relative;
+  z-index: 1;
+  padding: 51px 23px 39px;
+  background-color: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.0497193);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  position: absolute;
+  top: -28px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--black);
+  text-align: center;
+  padding-inline: 20px;
+}
+
+.description {
+  margin-top: 16px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--dark-gray);
+  text-align: center;
+}
+
+.cta-container {
+  margin-top: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cta-primary {
+  padding-inline: 24px;
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+  background-color: var(--moderate-cyan);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 12px;
+  border-radius: 999px;
+
+  &:hover {
+    background-color: var(--dark-cyan);
+  }
+
+  @include media(mobile) {
+    font-size: 16px;
+    padding-inline: 42px;
+  }
+}
+
+.bookmark {
+  border: none;
+  background-color: transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  display: flex;
+}
+
+.bookmark .text {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  left: -100vh;
+}
+
+.bookmark:hover circle {
+  fill: #707070;
+}
+
+.bookmark[data-active='true'],
+.bookmark[data-active='true']:hover {
+  circle {
+    fill: var(--dark-cyan);
+  }
+
+  path {
+    fill: var(--white);
+  }
+}

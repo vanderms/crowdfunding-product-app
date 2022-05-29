@@ -9,7 +9,12 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
+  bookmark: boolean = false;
+
   ngOnInit(): void {
   }
 
+  toggleBookmark(): void{
+    this.bookmark = !this.bookmark;
+  }
 }
