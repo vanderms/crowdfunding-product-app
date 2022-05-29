@@ -1,0 +1,55 @@
+@use 'sass:math';
+@use '../../styles/mixins' as *;
+
+
+.about-product {
+  margin: 24px auto 0;
+  width: min(730px, math.percentage(math.div(327, 375)));
+  border: 1px solid rgba(0, 0, 0, 0.0497193);
+  padding: 39px 23px;
+
+  @include media(tablet) {
+    padding: 47px;
+  }
+}
+
+.about-product .title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--black);
+
+  @include media(tablet) {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.about-product .p-container {
+  margin-top: 24px;
+
+  @include media(tablet) {
+    margin-top: 35px;
+  }
+}
+
+.about-product .p-container p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--dark-gray);
+
+  @include media(tablet) {
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  &:not(:first-child) {
+    margin-top: 24px;
+
+    @include media(tablet) {
+      margin-top: 30px;
+    }
+  }
+}
