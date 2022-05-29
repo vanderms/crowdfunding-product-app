@@ -10,5 +10,5 @@
   <button class="btn-menu" aria-label="open menu" (click)="toggleSidebar()">
     <img [src]="getCurrentBtn()" alt="">
   </button>
-  <div class="backdrop"></div>
+  <div (click)='closeSidebar()' class="backdrop"></div>
 </nav>

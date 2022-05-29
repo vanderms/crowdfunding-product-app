@@ -1,6 +1,12 @@
+@use '../../styles/mixins' as *;
+
 .header {
   margin-top: -56px;
   position: relative;
+
+  @include media(laptop){
+    margin-top: -68px;
+  }
 
   &::before {
     content: '';

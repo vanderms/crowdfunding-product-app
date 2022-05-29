@@ -1,15 +1,22 @@
 @use 'sass:math';
+@use '../../styles/mixins' as *;
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 32px auto 0;
+  margin-top: 32px;
   width: 100%;
   height: 24px;
   position: relative;
   z-index: 999;
   padding-inline: math.percentage($number: math.div(24, 375));
+
+  @include media(laptop) {
+    margin-top: 48px;
+    padding-inline: 165px;
+    height: 20px;
+  }
 
   .navlink-list {
     position: fixed;
@@ -21,6 +28,37 @@
     flex-direction: column;
     background-color: white;
     border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.0497193);
+
+    @include media(laptop) {
+      display: flex;
+      flex-direction: row;
+      position: unset;
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      width: auto;
+      gap: 32px;
+    }
+  }
+
+  .navlink-list li {
+    padding: 24px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(47, 47, 47, 0.1);
+    }
+
+    @include media(laptop) {
+      border: none;
+      padding: 0;
+      color: white;
+      font-weight: 500;
+      font-size: 15px;
+    }
   }
 
   .logo,
@@ -40,22 +78,14 @@
     background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.0001) 100%);
   }
 
-  .navlink-list li {
-    padding: 24px;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    border: 1px solid rgba(0, 0, 0, 0.0497193);
-
-    &:not(:last-child) {
-      border-bottom: 1px solid rgba(47, 47, 47, 0.1);
-    }
-  }
-
   .btn-menu {
     background-color: inherit;
     border: none;
     cursor: pointer;
+
+    @include media(laptop) {
+      display: none;
+    }
   }
 }
 
@@ -74,4 +104,9 @@
   background-color: black;
   height: 56px;
   margin-top: 0;
+
+  @include media(laptop) {
+    height: 84px;
+    padding-inline: calc(165px + max(0px, 50% - 720px));
+  }
 }
