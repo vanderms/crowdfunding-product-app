@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use '../../styles/mixins' as *;
 
 .indicator-section {
   margin: 24px auto 0;
@@ -6,6 +7,10 @@
   padding: 31px 23px 39px;
   border: 1px solid rgba(0, 0, 0, 0.0497193);
   border-radius: 8px;
+
+  @include media(tablet) {
+    padding: 47px 47px 48px;
+  }
 }
 
 .indicator-list {
@@ -13,12 +18,30 @@
   flex-direction: column;
   align-items: center;
   gap: 24px;
+
+  @include media(tablet) {
+    flex-direction: row;
+    gap: 112px;
+  }
 }
 
 .indicator {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include media(tablet){
+    &:first-child::after{
+      right: -42px;
+    }
+    &:nth-child(2)::after{
+      right: -69px;
+    }
+    &:last-child{
+      margin-right: 5px;
+    }
+  }
 }
 
 .indicator .value {
@@ -33,6 +56,11 @@
   font-size: 14px;
   line-height: 17px;
   color: var(--dark-gray);
+
+  @include media(tablet) {
+    font-size: 15px;
+    line-height: 18px;
+  }
 }
 
 .indicator:not(:last-child)::after {
@@ -41,8 +69,17 @@
   display: block;
   width: 80px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-}
 
+  @include media(tablet){
+    margin-top: 0;
+    position: absolute;
+    border-bottom: none;
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
+    width: 0;
+    height: 63px;    
+    top: 0;    
+  }
+}
 
 .progress-bar {
   margin-top: 32px;
@@ -50,6 +87,10 @@
   height: 12px;
   background: rgb(47, 47, 47, 0.05);
   border-radius: 33.5px;
+
+  @include media(tablet){
+    margin-top: 37px;
+  }
 }
 
 .progress-bar .progress {
