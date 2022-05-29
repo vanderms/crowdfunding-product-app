@@ -17,6 +17,10 @@
   @include media(tablet) {
     padding: 55px 47px 47px;
   }
+
+  @include media(laptop) {
+    margin-top: -92px;
+  }
 }
 
 .logo {
@@ -133,7 +137,7 @@
     fill: var(--white);
   }
 
-  .text{
+  .text {
     color: var(--dark-cyan);
   }
 }
