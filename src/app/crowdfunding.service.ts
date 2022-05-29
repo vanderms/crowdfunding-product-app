@@ -7,6 +7,7 @@ export interface ICrowdfundingData {
   backed: number;
   backers: number;
   daysLeft: number;
+  total: number;
 }
 
 @Injectable({

@@ -1,0 +1,19 @@
+<aside class="indicator-section">
+  <ul class="indicator-list">
+    <li class="indicator">
+      <p class="value">${{ formatNumberWithCommas(indicators?.backed) }}</p>
+      <p class="description">of $100,000 backed</p>
+    </li>
+    <li class="indicator">
+      <p class="value">{{ formatNumberWithCommas(indicators?.backers) }}</p>
+      <p class="description">total backers</p>
+    </li>
+    <li class="indicator">
+      <p class="value">{{ indicators?.daysLeft }}</p>
+      <p class="description">days left</p>
+    </li>
+  </ul>
+  <div class="progress-bar">
+    <span class="progress" [ngStyle]="{'width': calcProgressWidth()}"></span>
+  </div>
+</aside>
