@@ -12,6 +12,13 @@
     <h2 class="title">Back this project</h2>
     <p class="description">Want to support us in bringing Mastercraft Bamboo Monitor Riser
       out in the world?</p>
+    <ul class="product-list">
+      <li *ngFor="let product of products">
+        <app-card-selection [name]="product.name" [price]='product.price' [left]="product.left" 
+        [description]="product.description">
+        </app-card-selection>
+      </li>
 
+    </ul>
   </section>
 </div>

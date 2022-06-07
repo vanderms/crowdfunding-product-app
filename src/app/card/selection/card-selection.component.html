@@ -1,1 +1,15 @@
-<p>selection works!</p>
+<article class="card">
+  <input type="radio" name="modal-card-selected-product" [id]="getRadioButtonId()"
+    [checked]="selected" (change)="onRadioChange($event)">
+  <div class="title-container">
+    <h3 class="title">{{ name }}</h3>
+    <p *ngIf="price" class="pledge">Pledge ${{ price }} or more</p>
+  </div>
+  <p class="description">{{ description }}</p>
+  <p *ngIf='left' class="left"><span class="amount">{{ left }}</span>left</p>
+  <form *ngIf="selected" class="form">
+    <label [for]="getInputId()">Enter your pledge</label>
+    <input type="number" name="" [id]="getInputId()">
+    <input type="submit" value="Continue">
+  </form>
+</article>
