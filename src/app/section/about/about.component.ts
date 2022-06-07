@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { IProduct, ProductsService } from '../products.service';
+import { IProduct, ProductsService } from '../../products.service';
 
 
 @Component({
-  selector: 'app-about-product',
-  templateUrl: './about-product.component.html',
-  styleUrls: ['./about-product.component.scss']
+  selector: 'app-section-about',
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.scss']
 })
 export class AboutProductComponent implements OnInit {
 

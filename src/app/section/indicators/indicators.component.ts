@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CrowdfundingService, ICrowdfundingData } from '../crowdfunding.service';
+import { CrowdfundingService, ICrowdfundingData } from '../../crowdfunding.service';
 
 @Component({
-  selector: 'app-indicators',
+  selector: 'app-section-indicators',
   templateUrl: './indicators.component.html',
   styleUrls: ['./indicators.component.scss']
 })

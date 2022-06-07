@@ -1,7 +1,7 @@
 @use 'sass:math';
-@use '../../styles/mixins' as *;
+@use '../../../styles/mixins' as *;
 
-.about-product {
+.section-about {
   margin: 24px auto 76px;
   width: min(730px, math.percentage(math.div(327, 375)));
   border: 1px solid rgba(0, 0, 0, 0.0497193);
@@ -13,7 +13,7 @@
   }
 }
 
-.about-product .title {
+.section-about .title {
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
@@ -26,7 +26,7 @@
   }
 }
 
-.about-product .p-container {
+.section-about .p-container {
   margin-top: 24px;
 
   @include media(tablet) {
@@ -34,7 +34,7 @@
   }
 }
 
-.about-product .p-container p {
+.section-about .p-container p {
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;

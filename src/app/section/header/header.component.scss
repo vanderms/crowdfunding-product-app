@@ -1,5 +1,5 @@
 @use 'sass:math';
-@use '../../styles/mixins' as *;
+@use '../../../styles/mixins' as *;
 
 .header {
   width: min(730px, math.percentage(math.div(327, 375)));
