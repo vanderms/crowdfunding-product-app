@@ -20,6 +20,11 @@ ol {
   list-style-type: none;
 }
 
+button {
+  border: none;
+  background-color: transparent;
+}
+
 :root {
   --moderate-cyan: hsl(176, 50%, 47%);
   --dark-cyan: hsl(176, 72%, 28%);

@@ -1,19 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title: string = 'crowdfunding-page-app';
 
-  constructor(private route: ActivatedRoute) { }
-  
-  ngOnInit(): void {
-    this.route.queryParams.subscribe(params => console.log(params));
-    
-  }
+  constructor() { }
 
 }

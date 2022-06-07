@@ -8,7 +8,8 @@ import { CoverComponent } from './section/cover/cover.component';
 import { IndicatorsComponent } from './section/indicators/indicators.component';
 import { AboutProductComponent } from './section/about/about.component';
 import { CardProductComponent } from './card/product/card-product.component';
-
+import { ModalSelectionComponent } from './modal/selection/modal-selection.component';
+import { CardSelectionComponent } from './card/selection/card-selection.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,8 @@ import { CardProductComponent } from './card/product/card-product.component';
     IndicatorsComponent,
     AboutProductComponent,
     CardProductComponent,
+    ModalSelectionComponent,
+    CardSelectionComponent
   ],
   imports: [
     BrowserModule,
