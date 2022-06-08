@@ -1,5 +1,5 @@
 <div *ngIf="open" class="modal-selection-container">
-  <div class="backdrop"></div>
+  <div class="backdrop" (click)="closeModal()"></div>
   <section class="modal-selection">
     <button class="btn-close" aria-label='close modal' (click)="closeModal()">
       <svg width="15" height="15" viewBox="0 0 15 15" fill="none"

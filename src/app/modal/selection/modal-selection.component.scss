@@ -14,7 +14,7 @@
   background-color: white;
   top: 120px;
   width: min(87.2%, 730px);
-  margin-inline: calc(50% - (min(87.2%, 730px) / 2));
+  left:  calc(50% - (min(87.2%, 730px) / 2));
   padding: 31px 23px;
   border: 1px solid rgba(0, 0, 0, 0.0497193);
   border-radius: 8px;

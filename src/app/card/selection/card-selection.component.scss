@@ -7,6 +7,10 @@
 
 .card[data-disabled='true'] {
   opacity: 0.5;
+
+  .title:hover{
+    color: var(--black);
+  }
 }
 
 .main-content {
@@ -151,6 +155,7 @@
   @include media(tablet) {
     font-size: 15px;
     line-height: 28px;
+    text-align: left;
   }
 
   .error-message {

@@ -1,0 +1,94 @@
+@use '../../../styles/mixins' as *;
+
+
+.modal-appreciation-container .backdrop {
+  position: fixed;
+  inset: 0 0 0 0;
+  background-color: black;
+  z-index: 999;
+  opacity: 0.5;
+}
+
+.modal-appreciation {
+  position: absolute;
+  z-index: 1000;
+  background-color: white;
+  top: 140px;
+  width: min(87.2%, 540px);
+  left: calc(50% - (min(87.2%, 540px) / 2));;
+  padding: 31px 23px 39px;
+  border: 1px solid rgba(0, 0, 0, 0.0497193);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+
+  @include media(tablet) {
+    gap: 0;
+    padding: 47px;
+  }  
+}
+
+.ok {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--moderate-cyan);
+  display: grid;
+  place-items: center;
+
+  @include media(tablet) {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+.title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--black);
+
+  @include media(tablet) {
+    margin-top: 48px;
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+
+.text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--dark-gray);
+  text-align: center;
+
+  @include media(tablet) {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 30px;
+  }
+}
+
+
+.close {
+  margin-top: 8px;
+  width: 107px;
+  height: 48px;
+  background-color: var(--moderate-cyan);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  border-radius: 999px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--dark-cyan);
+  }
+
+  @include media(tablet){
+    margin-top: 32px;
+  }
+}

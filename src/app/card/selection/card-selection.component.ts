@@ -53,6 +53,7 @@ export class CardSelectionComponent implements OnInit {
     }
     else {
       this.error = false;
+      this.router.navigate(['/'], { queryParams: { modal: 'appreciation' }});
     }
   }
 

@@ -11,6 +11,7 @@ import { CardProductComponent } from './card/product/card-product.component';
 import { ModalSelectionComponent } from './modal/selection/modal-selection.component';
 import { CardSelectionComponent } from './card/selection/card-selection.component';
 import { FormsModule } from '@angular/forms';
+import { ModalAppreciationComponent } from './modal/appreciation/appreciation.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     AboutProductComponent,
     CardProductComponent,
     ModalSelectionComponent,
-    CardSelectionComponent
+    CardSelectionComponent,
+    ModalAppreciationComponent
   ],
   imports: [
     BrowserModule,

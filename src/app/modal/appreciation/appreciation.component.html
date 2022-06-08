@@ -1,0 +1,15 @@
+<div *ngIf="open" class="modal-appreciation-container">
+  <div class="backdrop" (click)="closeModal()"></div>
+  <article class="modal-appreciation">
+    <div class="ok">
+      <svg width="28" height="22" viewBox="0 0 28 22" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 9.8598L10.0929 18L26 2" stroke="white" stroke-width="5" />
+      </svg>
+    </div>
+    <h2 class="title">Thanks for your support!</h2>
+    <p class="text">Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser
+    worldwide. You will get an email once our campaign is completed.</p>
+    <button (click)="closeModal()"  class="close">Got it</button>
+  </article>
+</div>
