@@ -18,6 +18,10 @@
   padding: 31px 23px;
   border: 1px solid rgba(0, 0, 0, 0.0497193);
   border-radius: 8px;
+
+  @include media(tablet) {
+    padding: 47px;
+  }
 }
 
 .btn-close {
@@ -36,6 +40,11 @@
   font-size: 18px;
   line-height: 22px;
   color: var(--black);
+
+  @include media(tablet) {
+    font-size: 24px;
+    line-height: 29px;
+  }
 }
 
 .description {
@@ -44,6 +53,12 @@
   font-size: 14px;
   line-height: 24px;
   color: var(--dark-gray);
+
+  @include media(tablet) {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 30px;
+  }
 }
 
 .product-list {
@@ -51,4 +66,8 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+
+  @include media(tablet){
+    margin-top: 32px;
+  }
 }
