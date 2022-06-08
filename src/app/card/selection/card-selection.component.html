@@ -1,8 +1,8 @@
-<article class="card" [attr.data-disabled]="left === 0" (click)="onSelect()">
+<article class="card" [attr.data-disabled]="left === 0">
   <div class="main-content">
-    <div class="radio-mark" [attr.data-selected]="selected"></div>
+    <div class="radio-mark" [attr.data-selected]="selected" (click)="onSelect()"></div>
     <div class="title-container">
-      <h3 class="title">{{ name }}</h3>
+      <h3 class="title" (click)="onSelect()">{{ name }}</h3>
       <p *ngIf="price" class="pledge">Pledge ${{ price }} or more</p>
     </div>
     <p class="description">{{ description }}</p>
