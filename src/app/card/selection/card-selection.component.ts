@@ -18,13 +18,13 @@ export class CardSelectionComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.setSelected();   
     this.setKebabName();
+    this.setSelected();
   }
 
   setSelected() : void {
     this.activatedRoute.queryParams.subscribe(params => {   
-      this.selected = params['selected'] === this.kebabName;
+      this.selected = params['selected'] === this.kebabName;      
     })
   }
 
@@ -39,7 +39,7 @@ export class CardSelectionComponent implements OnInit {
           modal: 'open',
           selected: this.kebabName
       }})  
-    } 
+    }
   }
 
   getInputId(): string{
