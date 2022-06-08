@@ -13,13 +13,17 @@ export class CardSelectionComponent implements OnInit {
   @Input() description: string = '';  
   @Input() left: number | null = null;
   selected: boolean = false;
+  pledge: number = 0;
+  error: boolean = false;  
   private kebabName: string = '';
+
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.setKebabName();
     this.setSelected();
+    this.pledge = typeof this.price === 'number' ? this.price : 0;
   }
 
   setSelected() : void {
@@ -36,9 +40,18 @@ export class CardSelectionComponent implements OnInit {
     if ((event.currentTarget as HTMLInputElement).checked) {
       this.router.navigate(['/'], {
         queryParams: {
-          modal: 'open',
+          modal: 'selection',
           selected: this.kebabName
       }})  
+    }
+  }
+
+  onSubmit(): void {
+    if (this.pledge < (this.price ? this.price : 0)) {
+      this.error = true;
+    }
+    else {
+      this.error = false;
     }
   }
 

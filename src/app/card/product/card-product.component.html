@@ -7,6 +7,6 @@
   <div class="card-product__bottom-container">
     <p class="card-product__left"><strong class="card-product__value">{{ left }}</strong>
       left</p>
-    <button class="card-product__select" [disabled]="left == 0">Select Reward</button>
+    <button class="card-product__select" (click)="onClick()" [disabled]="left == 0">Select Reward</button>
   </div>
 </article>

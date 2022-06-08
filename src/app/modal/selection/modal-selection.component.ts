@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { ProductsService, IProduct } from 'src/app/products.service';
 
 @Component({
@@ -10,13 +10,19 @@ import { ProductsService, IProduct } from 'src/app/products.service';
 export class ModalSelectionComponent implements OnInit {
 
   open: boolean = false;
-  products: IProduct[] =  [];
+  products: IProduct[] = [];
+  private scroll: boolean = false;
 
-  constructor(private route: ActivatedRoute, private productsService: ProductsService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private productsService: ProductsService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.subscribeToQueryParams();
     this.subscribeToProductsService();
+    this.subscribeToRouter();    
   }
 
   subscribeToProductsService() {
@@ -26,9 +32,24 @@ export class ModalSelectionComponent implements OnInit {
       });
   }
 
+  closeModal(): void {
+    this.router.navigate(['/']);
+  }
+
   subscribeToQueryParams(): void {
-    this.route.queryParams.subscribe(params => {
-      this.open = params['modal'] === 'open';
+    this.activatedRoute.queryParams.subscribe(params => {
+      if (!this.open && params['modal'] === 'selection') {
+        this.scroll = true;
+      }
+      this.open = params['modal'] === 'selection';      
+    });
+  }
+
+  subscribeToRouter(): void {
+    this.router.events.subscribe((event) => {
+      if (this.scroll && (event instanceof NavigationEnd)) {
+        window.scrollTo(0, 0);
+      }     
     });
   }
 }

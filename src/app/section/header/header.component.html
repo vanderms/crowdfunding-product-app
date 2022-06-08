@@ -4,7 +4,8 @@
   <p class="description">A beautiful & handcrafted monitor stand to reduce neck and eye
     strain.</p>
   <div class="cta-container">
-    <a href="" class="cta-primary">Back this project</a>
+    <a [routerLink]="['/']" [queryParams]="{ modal: 'selection' }" class="cta-primary">Back
+      this project</a>
     <button class="bookmark" (click)="toggleBookmark()" [attr.data-active]='bookmark'
       title='bookmark'>
       <svg class='icon' width="56" height="56" xmlns="http://www.w3.org/2000/svg">

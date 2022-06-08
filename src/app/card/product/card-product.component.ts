@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-card-product',
@@ -12,9 +13,17 @@ export class CardProductComponent implements OnInit {
   @Input() description!: string;
   @Input() left!: number | null;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  onClick() {   
+    this.router.navigate(['/'], {
+      queryParams: {
+        modal: 'selection',
+        selected: this.name.replace(/\s/g, '-').toLowerCase()
+    }})
   }
 
 }

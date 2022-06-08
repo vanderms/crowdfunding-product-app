@@ -10,6 +10,7 @@ import { AboutProductComponent } from './section/about/about.component';
 import { CardProductComponent } from './card/product/card-product.component';
 import { ModalSelectionComponent } from './modal/selection/modal-selection.component';
 import { CardSelectionComponent } from './card/selection/card-selection.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CardSelectionComponent } from './card/selection/card-selection.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

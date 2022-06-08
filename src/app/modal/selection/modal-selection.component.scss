@@ -45,3 +45,10 @@
   line-height: 24px;
   color: var(--dark-gray);
 }
+
+.product-list {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
