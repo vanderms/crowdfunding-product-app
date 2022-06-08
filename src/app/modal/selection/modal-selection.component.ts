@@ -49,6 +49,7 @@ export class ModalSelectionComponent implements OnInit {
     this.router.events.subscribe((event) => {
       if (this.scroll && (event instanceof NavigationEnd)) {
         window.scrollTo(0, 0);
+        this.scroll = false;
       }     
     });
   }

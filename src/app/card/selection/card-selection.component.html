@@ -1,10 +1,6 @@
-<article class="card" [attr.data-disabled]="left === 0">
+<article class="card" [attr.data-disabled]="left === 0" (click)="onSelect()">
   <div class="main-content">
-    <label class="label-radio-button" [attr.data-selected]="selected">
-      <input type="radio" name="modal-card-selected-product" [id]="getRadioButtonId()"
-        [checked]="selected" (change)="onRadioChange($event)"
-        [attr.aria-label]="'select ' + name" [disabled]="left === 0">
-    </label>
+    <div class="radio-mark" [attr.data-selected]="selected"></div>
     <div class="title-container">
       <h3 class="title">{{ name }}</h3>
       <p *ngIf="price" class="pledge">Pledge ${{ price }} or more</p>

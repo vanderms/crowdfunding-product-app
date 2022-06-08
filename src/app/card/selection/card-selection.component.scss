@@ -2,7 +2,7 @@
 
 .card {
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
+  border-radius: 8px;  
 }
 
 .card[data-disabled='true'] {
@@ -16,13 +16,7 @@
   padding: 23px;
 }
 
-.label-radio-button input {
-  appearance: none;
-  width: 0;
-  height: 0;
-}
-
-.label-radio-button {
+.radio-mark {
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -33,7 +27,7 @@
   align-self: center;
 }
 
-.label-radio-button[data-selected='true']::before {
+.radio-mark[data-selected='true']::before {
   content: '';
   width: 12px;
   height: 12px;
@@ -52,7 +46,14 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
+  cursor: pointer;
+  
+  &:hover{
+    color: var(--moderate-cyan);
+  }
 }
+
+
 
 .pledge {
   margin-top: 8px;
@@ -161,4 +162,8 @@
   line-height: 17px;
   border: none;
   cursor: pointer;
+
+  &:hover{
+    background-color: var(--dark-cyan);
+  }
 }

@@ -36,14 +36,15 @@ export class CardSelectionComponent implements OnInit {
     this.kebabName = this.name.replace(/\s/g, '-').toLowerCase();
   }
 
-  onRadioChange(event: Event): void {
-    if ((event.currentTarget as HTMLInputElement).checked) {
+  onSelect(): void {
+    if (this.left !== 0) {
       this.router.navigate(['/'], {
         queryParams: {
           modal: 'selection',
           selected: this.kebabName
-      }})  
-    }
+        }}
+      )
+    }  
   }
 
   onSubmit(): void {
